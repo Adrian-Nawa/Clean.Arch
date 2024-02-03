@@ -1,4 +1,5 @@
 using CleanArch.Infra.Data.Context;
+using CleanArch.Infra.IoC;
 using CleanArch.Mvc.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -47,3 +48,8 @@ app.MapControllerRoute(
 app.MapRazorPages();
 
 app.Run();
+
+//public static void RegisterServices(IServiceCollection services)
+//{
+  //  DependencyContainer.RegisterServices(services);
+//}
