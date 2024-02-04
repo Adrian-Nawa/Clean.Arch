@@ -20,6 +20,11 @@ builder.Services.AddDbContext<TestDb>(options =>
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
+RegisterServices(builder.Services);
+static void RegisterServices(IServiceCollection services)
+{
+    DependencyContainer.RegisterServices(services);
+}
 
 var app = builder.Build();
 
@@ -48,8 +53,3 @@ app.MapControllerRoute(
 app.MapRazorPages();
 
 app.Run();
-
-//public static void RegisterServices(IServiceCollection services)
-//{
-  //  DependencyContainer.RegisterServices(services);
-//}
