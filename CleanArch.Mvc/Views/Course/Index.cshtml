@@ -10,7 +10,9 @@
         @foreach(var course in Model.Courses)
         {
             <div class="course-image-container">
-                <div class="course-image" style="background:url(@course.ImageUrl);"></div>
+                <a asp-action="ShowCourse" asp-route-id="@course.CourseId">
+                    <div class="course-image" style="background:url(@course.ImageUrl);"></div>
+                </a>
             </div>
             <span>@course.Name</span>
         }

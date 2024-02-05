@@ -16,6 +16,12 @@ namespace CleanArch.Infra.Data.Repository
         {
             _tdb = test;
         }
+
+        public Course GetCourseById(int courseid)
+        {
+            return _tdb.Courses.Find(courseid);
+        }
+
         public IEnumerable<Course> GetCourses()
         {
             return _tdb.Courses;

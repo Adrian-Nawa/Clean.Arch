@@ -1,6 +1,7 @@
 ﻿using CleanArch.Application.Interfices;
 using CleanArch.Application.ViewModels;
 using CleanArch.Domain.Interfices;
+using CleanArch.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,13 @@ namespace CleanArch.Application.Services
         {
             _courseRepository = courseRepository;
         }
+
+        public Course GetCourseById(int courseid)
+        {
+            Course course = _courseRepository.GetCourseById(courseid);
+            return course;
+        }
+
         public CourseViewModel GetCourses()
         {
             return new CourseViewModel()
